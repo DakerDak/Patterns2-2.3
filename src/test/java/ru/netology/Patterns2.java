@@ -27,7 +27,7 @@ public class Patterns2 {
         $("[name=\"login\"]").setValue(registeredUser.getLogin());
         $("[name=\"password\"]").setValue(registeredUser.getPassword());
         $(".button__text").click();
-        $(".heading.heading_size_l").shouldHave(Condition.text("  Личный кабинет"));
+        $(".heading.heading_size_l").shouldHave(Condition.text("  Личный кабинет")).shouldBe(Condition.visible);
 
     }
 
@@ -39,7 +39,7 @@ public class Patterns2 {
         $("[name=\"password\"]").setValue(notRegisteredUser.getPassword());
         $(".button__text").click();
         $(".notification__title").should(Condition.visible, Duration.ofSeconds(15));
-        $(".notification__content").shouldHave(Condition.text("Неверно указан логин или пароль"), Duration.ofSeconds(15));
+        $(".notification__content").shouldHave(Condition.text("Неверно указан логин или пароль")).shouldBe(Condition.visible);
     }
 
     @Test
@@ -50,7 +50,7 @@ public class Patterns2 {
         $("[name=\"password\"]").setValue(blockedUser.getPassword());
         $(".button__text").click();
         $(".notification__title").should(Condition.visible, Duration.ofSeconds(15));
-        $(".notification__content").shouldHave(Condition.text("Пользователь заблокирован"), Duration.ofSeconds(15));
+        $(".notification__content").shouldHave(Condition.text("Пользователь заблокирован")).shouldBe(Condition.visible);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class Patterns2 {
         $("[name=\"password\"]").setValue(registeredUser.getPassword());
         $(".button__text").click();
         $(".notification__title").should(Condition.visible, Duration.ofSeconds(15));
-        $(".notification__content").shouldHave(Condition.text("Неверно указан логин или пароль"), Duration.ofSeconds(15));
+        $(".notification__content").shouldHave(Condition.text("Неверно указан логин или пароль")).shouldBe(Condition.visible);
     }
 
     @Test
@@ -74,7 +74,7 @@ public class Patterns2 {
         $("[name=\"password\"]").setValue(wrongPassword);
         $(".button__text").click();
         $(".notification__title").should(Condition.visible, Duration.ofSeconds(15));
-        $(".notification__content").shouldHave(Condition.text("Неверно указан логин или пароль"), Duration.ofSeconds(15));
+        $(".notification__content").shouldHave(Condition.text("Неверно указан логин или пароль")).shouldBe(Condition.visible);
     }
 }
 
